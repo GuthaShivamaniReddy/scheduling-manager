@@ -1,0 +1,40 @@
+{
+  "name": "@vitalize-interview/server",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "bun test",
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "type-check": "tsc --noEmit",
+    "generate": "drizzle-kit generate --config src/db/drizzle.config.ts",
+    "drop": "drizzle-kit drop --config src/db/drizzle.config.ts",
+    "migrate": "drizzle-kit migrate --config src/db/drizzle.config.ts",
+    "seed": "bun run src/db/seed/seedDatabase.ts",
+    "studio": "drizzle-kit studio --config src/db/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@effect/data": "^0.18.7",
+    "@effect/io": "^0.41.2",
+    "@effect/platform-bun": "^0.83.0",
+    "@effect/rpc": "^0.72.1",
+    "@effect/sql": "^0.48.0",
+    "@effect/sql-pg": "^0.48.0",
+    "@effect/schema": "^0.54.1",
+    "@types/pg": "^8.15.6",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^1.0.0-beta.19",
+    "drizzle-seed": "^0.3.1",
+    "effect": "^3.19.3",
+    "pg": "^8.16.3",
+    "postgres": "^3.4.5",
+    "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "drizzle-kit": "1.0.0-beta.19",
+    "tsx": "^4.19.3",
+    "@vitalize-interview/shared-types": "*"
+  },
+  "module": "src/index.js"
+}

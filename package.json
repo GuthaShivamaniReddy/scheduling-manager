@@ -1,0 +1,34 @@
+{
+  "name": "vitalize-interview",
+  "version": "0.1.1",
+  "devDependencies": {
+    "@effect/language-service": "^0.82.0",
+    "dotenv-cli": "^8.0.0",
+    "eslint": "^8.57.1",
+    "prettier": "^3.6.2",
+    "turbo": "^2.6.1"
+  },
+  "packageManager": "bun@1.3.2",
+  "private": true,
+  "scripts": {
+    "build": "dotenv -- turbo run build",
+    "start": "dotenv -- turbo run start",
+    "setup": "./setup.sh",
+    "dev": "dotenv -- turbo run dev studio",
+    "type-check": "dotenv -- turbo run type-check",
+    "lint": "dotenv -- turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "dotenv -- turbo run test",
+    "generate": "dotenv -- turbo run generate",
+    "drop": "dotenv -- turbo run drop",
+    "migrate": "dotenv -- turbo run migrate",
+    "seed": "dotenv -- turbo run seed",
+    "studio": "dotenv -- turbo run studio",
+    "zip": "git archive --format=zip --prefix=vitalize-interview-v$npm_package_version/ -o vitalize-interview-v$npm_package_version.zip HEAD"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {}
+}

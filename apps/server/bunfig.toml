@@ -1,0 +1,2 @@
+[test]
+# DB tests opt in via `import "../db/database-setup"` — see SETUP.md.

@@ -1,0 +1,41 @@
+{
+  "name": "nikhil-interview",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "moby": true
+    },
+    "ghcr.io/shyim/devcontainers-features/bun:0": {
+      "version": "1.3.2"
+    }
+  },
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "8gb"
+  },
+  "forwardPorts": [3000, 3001, 4983, 5433],
+  "portsAttributes": {
+    "3000": { "label": "web (vite)", "onAutoForward": "openBrowser" },
+    "3001": { "label": "server (bun)", "onAutoForward": "silent" },
+    "4983": { "label": "drizzle studio", "onAutoForward": "silent" },
+    "5433": { "label": "postgres", "onAutoForward": "silent" }
+  },
+  "postCreateCommand": "./setup.sh < /dev/null || true",
+  "postStartCommand": "docker compose up -d postgres",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "oven.bun-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  },
+  "remoteUser": "node"
+}

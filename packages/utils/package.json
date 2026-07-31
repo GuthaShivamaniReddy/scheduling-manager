@@ -1,0 +1,46 @@
+{
+  "name": "@vitalize-interview/utils",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/temporal.ts",
+  "types": "./src/temporal.ts",
+  "exports": {
+    ".": {
+      "types": "./src/temporal.ts",
+      "import": "./src/temporal.ts",
+      "require": "./src/temporal.ts"
+    },
+    "./temporal": {
+      "types": "./src/temporal.ts",
+      "import": "./src/temporal.ts",
+      "require": "./src/temporal.ts"
+    },
+    "./temporal/*": {
+      "types": "./src/temporal/*.ts",
+      "import": "./src/temporal/*.ts",
+      "require": "./src/temporal/*.ts"
+    },
+    "./*": {
+      "types": "./src/*.ts",
+      "import": "./src/*.ts",
+      "require": "./src/*.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "temporal": ["./src/temporal.ts"],
+      "temporal/*": ["./src/temporal/*.ts"],
+      "*": ["./src/*.ts"]
+    }
+  },
+  "scripts": {
+    "test": "bun test",
+    "lint": "bunx biome lint && bunx biome format",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf ./.turbo ./dist ./.rollup.cache ./node_modules"
+  },
+  "dependencies": {
+    "temporal-polyfill": "^0.3.0"
+  }
+}

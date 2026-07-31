@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noImplicitAny": true,
+    "noErrorTruncation": true,
+    "useUnknownInCatchVariables": false,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "outDir": "./dist",
+    "declarationDir": "./dist/types",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "inlineSources": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationMap": true,
+    "skipLibCheck": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./dist/.tsbuildinfo"
+  },
+  "exclude": ["node_modules", "./dist/**/*", "**/*.test.ts", "**/*.spec.ts"]
+}
