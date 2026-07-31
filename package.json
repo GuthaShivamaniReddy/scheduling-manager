@@ -1,6 +1,6 @@
 {
   "name": "vitalize-interview",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "devDependencies": {
     "@effect/language-service": "^0.82.0",
     "dotenv-cli": "^8.0.0",
